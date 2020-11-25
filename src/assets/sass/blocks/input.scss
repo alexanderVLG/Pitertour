@@ -1,0 +1,17 @@
+.primary__input {
+  margin-bottom: 1.57em;
+  padding: 1.357em 7em 1.357em 3.21em;
+  text-align: left;
+  font-size: 0.875rem;
+  color: #a0a0a0;
+  background: #f0f0f0;
+  border-radius: 2.65em;
+  border: none;
+  outline: none;
+}
+
+@media (min-width: 64em) {
+  .primary__input {
+    padding-right: 17.6em;
+  }
+}

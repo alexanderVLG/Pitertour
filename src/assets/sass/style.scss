@@ -1,0 +1,139 @@
+@import "vars";
+
+/* Blocks */
+@import "blocks/form.scss";
+@import "blocks/input.scss";
+@import "blocks/buttons.scss";
+
+/* mixins */
+
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $addMobSize: $addSize + $addSize * 0.7;
+    @media (max-width: 767px) {
+        font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidth}));
+    }
+    @media (min-width: 767px) {
+        font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
+    }
+}
+
+/* @include adaptiv-font(40, 24) */
+
+/* Default styles */
+:root {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    color: #000;
+    line-height: 1.5;
+    background-color: #5cc5b1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main {
+    max-width: 594px;
+    margin: 6.25em auto;
+    background: linear-gradient(360deg, #6ed4ff 1.75%, #8fffa3 95.51%);
+    border-radius: 2.68em;
+    overflow: hidden;
+}
+
+@media (min-width: 64em) {
+    .main {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1253px;
+    }
+}
+
+.main__container {
+    position: relative;
+    display: none;
+}
+
+@media (min-width: 64em) {
+    .main__container {
+        display: block;
+    }
+}
+
+.main__title {
+    margin: 8.53em 3.17em 0 1.46em;
+    font-size: 3.25rem;
+    font-weight: 700;
+    letter-spacing: 0.47px;
+    color: #fff;
+}
+
+.main__subtitle {
+    margin: 0.87em 7.125em 0 3.375em;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.absolute__item {
+    position: absolute;
+    border-radius: 55px;
+    background-color: #fff;
+    opacity: 0.3;
+}
+
+.absolute__item--first {
+    top: -40px;
+    left: -50px;
+    width: 392px;
+    height: 373px;
+}
+
+.absolute__item--second {
+    top: 155px;
+    left: -50px;
+    width: 242px;
+    height: 247px;
+}
+
+.absolute__item--third {
+    bottom: 65px;
+    right: -255px;
+    width: 392px;
+    height: 373px;
+}
+
+.absolute__item--forth {
+    bottom: -70px;
+    left: 370px;
+    width: 260px;
+    height: 279px;
+}
